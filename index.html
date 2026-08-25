@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GUNMA — PSICO</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #050505;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 5px;
+        }
+
+        .menu {
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .collection {
+            font-size: 13px;
+            letter-spacing: 6px;
+            margin-bottom: 25px;
+            color: #aaa;
+        }
+
+        h1 {
+            font-size: clamp(70px, 20vw, 220px);
+            line-height: 0.8;
+            letter-spacing: -8px;
+            font-weight: 900;
+        }
+
+        .concept {
+            margin-top: 35px;
+            font-size: 14px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .button {
+            margin-top: 45px;
+            padding: 16px 35px;
+            border: 1px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 3px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .products {
+            padding: 100px 25px;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .section-title {
+            font-size: 12px;
+            letter-spacing: 5px;
+            margin-bottom: 50px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .product {
+            aspect-ratio: 3 / 4;
+            background: #e8e8e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .product span {
+            font-size: 11px;
+            letter-spacing: 3px;
+        }
+
+        .about {
+            padding: 120px 25px;
+            text-align: center;
+            background: #050505;
+        }
+
+        .about h2 {
+            font-size: 45px;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+
+        .about p {
+            max-width: 500px;
+            margin: auto;
+            color: #aaa;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        footer {
+            padding: 40px 25px;
+            border-top: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                letter-spacing: -5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">GUNMA</div>
+        <div class="menu">PSICO — 01</div>
+    </header>
+
+    <section class="hero">
+
+        <div class="collection">
+            COLLECTION 01
+        </div>
+
+        <h1>PSICO</h1>
+
+        <div class="concept">
+            Vista sua identidade
+        </div>
+
+        <a href="#collection" class="button">
+            EXPLORE
+        </a>
+
+    </section>
+
+    <section class="products" id="collection">
+
+        <div class="section-title">
+            GUNMA — PSICO
+        </div>
+
+        <div class="product-grid">
+
+            <div class="product">
+                <span>PRODUCT 01</span>
+            </div>
+
+            <div class="product">
+                <span>PRODUCT 02</span>
+            </div>
+
+            <div class="product">
+                <span>PRODUCT 03</span>
+            </div>
+
+            <div class="product">
+                <span>PRODUCT 04</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="about">
+
+        <h2>GUNMA</h2>
+
+        <p>
+            Vista sua identidade.
+            Uma coleção criada para transformar
+            expressão, personalidade e atitude em
+            algo que você pode vestir.
+        </p>
+
+    </section>
+
+    <footer>
+
+        <span>GUNMA © 2026</span>
+
+        <a href="https://www.instagram.com/gunma.stk/" target="_blank">
+            INSTAGRAM
+        </a>
+
+    </footer>
+
+</body>
+</html>
