@@ -304,27 +304,38 @@
 
 
         <!-- PRODUTO 01 -->
+<!-- PRODUTO 01 -->
 
-        <a class="product-card" href="#">
+<a class="product-card" href="#">
 
-            <img
-                class="product-image"
-                src="psico-logo.jpg"
-                alt="Camiseta PSICO Logo">
+    <div class="product-media">
 
-            <div class="product-info">
+        <img
+            class="foto"
+            src="psico-logo.jpg"
+            alt="Camiseta PSICO Logo">
 
-                <div class="product-name">
-                    PSICO LOGO
-                </div>
+        <img
+            class="gif"
+            src="psico-giro.gif"
+            alt="Camiseta PSICO girando">
 
-                <div class="price">
-                    R$ 85.00
-                </div>
+    </div>
 
-            </div>
+    <div class="product-info">
 
-        </a>
+        <div class="product-name">
+            PSICO LOGO
+        </div>
+
+        <div class="price">
+            R$ 85.00
+        </div>
+
+    </div>
+
+</a>
+
 
 
         <!-- PRODUTO 02 -->
@@ -431,6 +442,38 @@
     </a>
 
 </footer>
+
+    <script>
+
+const produtos = document.querySelectorAll('.product-card');
+
+produtos.forEach(produto => {
+
+    const media = produto.querySelector('.product-media');
+
+    if (!media) return;
+
+    produto.addEventListener('pointerdown', function(event) {
+
+        media.classList.add('tocando');
+
+    });
+
+    produto.addEventListener('pointerup', function(event) {
+
+        media.classList.remove('tocando');
+
+    });
+
+    produto.addEventListener('pointercancel', function(event) {
+
+        media.classList.remove('tocando');
+
+    });
+
+});
+
+    </script>
 
 </body>
 </html>
