@@ -13,142 +13,192 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background: #050505;
-            color: #ffffff;
+            color: #fff;
             font-family: Arial, Helvetica, sans-serif;
         }
 
         header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 25px;
+            height: 75px;
+            padding: 0 5%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            z-index: 10;
+            justify-content: space-between;
+            border-bottom: 1px solid #222;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(5,5,5,.9);
+            backdrop-filter: blur(10px);
+            z-index: 100;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 900;
-            letter-spacing: 5px;
+            letter-spacing: 7px;
         }
 
-        .menu {
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+        .collection-name {
+            font-size: 11px;
+            letter-spacing: 6px;
+        }
+
+        .instagram {
+            color: white;
+            text-decoration: none;
+            font-size: 10px;
+            letter-spacing: 3px;
         }
 
         .hero {
             min-height: 100vh;
+            padding: 130px 7% 80px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 30px;
+            position: relative;
         }
 
-        .collection {
-            font-size: 13px;
-            letter-spacing: 6px;
-            margin-bottom: 25px;
-            color: #aaa;
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .small-title {
+            font-size: 11px;
+            letter-spacing: 8px;
+            color: #999;
+            margin-bottom: 30px;
         }
 
         h1 {
-            font-size: clamp(70px, 20vw, 220px);
-            line-height: 0.8;
-            letter-spacing: -8px;
+            font-size: clamp(80px, 18vw, 220px);
+            line-height: .75;
+            letter-spacing: -10px;
             font-weight: 900;
         }
 
         .concept {
-            margin-top: 35px;
-            font-size: 14px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
+            margin-top: 45px;
+            font-size: 13px;
+            letter-spacing: 8px;
         }
 
-        .button {
+        .explore {
+            display: inline-block;
             margin-top: 45px;
-            padding: 16px 35px;
+            padding: 18px 35px;
             border: 1px solid #fff;
             color: #fff;
             text-decoration: none;
-            font-size: 12px;
-            letter-spacing: 3px;
-            transition: 0.3s;
+            font-size: 11px;
+            letter-spacing: 4px;
+            transition: .3s;
         }
 
-        .button:hover {
-            background: #fff;
-            color: #000;
+        .explore:hover {
+            background: white;
+            color: black;
         }
 
         .products {
-            padding: 100px 25px;
-            background: #ffffff;
-            color: #000000;
+            padding: 100px 5%;
+            border-top: 1px solid #222;
         }
 
-        .section-title {
-            font-size: 12px;
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 35px;
+        }
+
+        .section-title,
+        .see-all {
+            font-size: 11px;
             letter-spacing: 5px;
-            margin-bottom: 50px;
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
         }
 
-        .product {
-            aspect-ratio: 3 / 4;
-            background: #e8e8e8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        .product-card {
+            color: white;
+            text-decoration: none;
         }
 
-        .product span {
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+            background: #111;
+            transition: transform .4s, filter .4s;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(.98);
+        }
+
+        .blur {
+            filter: blur(12px);
+            transform: scale(1.05);
+        }
+
+        .product-card:hover .blur {
+            filter: blur(16px);
+        }
+
+        .product-info {
+            padding-top: 16px;
+        }
+
+        .product-name {
             font-size: 11px;
             letter-spacing: 3px;
         }
 
+        .price {
+            margin-top: 8px;
+            color: #999;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
         .about {
-            padding: 120px 25px;
+            padding: 150px 10%;
+            border-top: 1px solid #222;
             text-align: center;
-            background: #050505;
         }
 
         .about h2 {
-            font-size: 45px;
-            margin-bottom: 30px;
-            letter-spacing: -2px;
+            font-size: clamp(40px, 8vw, 100px);
+            letter-spacing: -5px;
         }
 
         .about p {
-            max-width: 500px;
-            margin: auto;
-            color: #aaa;
+            max-width: 550px;
+            margin: 35px auto 0;
+            color: #999;
             line-height: 1.8;
             font-size: 14px;
         }
 
         footer {
-            padding: 40px 25px;
             border-top: 1px solid #222;
+            padding: 35px 5%;
             display: flex;
             justify-content: space-between;
-            font-size: 10px;
-            letter-spacing: 2px;
+            font-size: 9px;
+            letter-spacing: 4px;
         }
 
         footer a {
@@ -156,13 +206,37 @@
             text-decoration: none;
         }
 
-        @media (max-width: 600px) {
+        @media(max-width: 800px) {
+
+            header {
+                padding: 0 20px;
+            }
+
+            .collection-name {
+                display: none;
+            }
+
             .product-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .products {
+                padding: 70px 20px;
+            }
+
+            .hero {
+                padding-left: 20px;
+                padding-right: 20px;
             }
 
             h1 {
-                letter-spacing: -5px;
+                letter-spacing: -6px;
+            }
+
+            .concept {
+                font-size: 10px;
+                letter-spacing: 5px;
             }
         }
     </style>
@@ -170,79 +244,193 @@
 
 <body>
 
-    <header>
-        <div class="logo">GUNMA</div>
-        <div class="menu">PSICO — 01</div>
-    </header>
+<header>
 
-    <section class="hero">
+    <div class="logo">GUNMA</div>
 
-        <div class="collection">
+    <div class="collection-name">
+        PSICO — 01
+    </div>
+
+    <a
+        class="instagram"
+        href="https://www.instagram.com/gunma.stk/"
+        target="_blank">
+        INSTAGRAM
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
             COLLECTION 01
         </div>
 
         <h1>PSICO</h1>
 
         <div class="concept">
-            Vista sua identidade
+            VISTA SUA IDENTIDADE
         </div>
 
-        <a href="#collection" class="button">
-            EXPLORE
+        <a href="#colecao" class="explore">
+            EXPLORAR COLEÇÃO →
         </a>
 
-    </section>
+    </div>
 
-    <section class="products" id="collection">
+</section>
+
+
+<section class="products" id="colecao">
+
+    <div class="section-header">
 
         <div class="section-title">
-            GUNMA — PSICO
+            COLEÇÃO 01
         </div>
 
-        <div class="product-grid">
-
-            <div class="product">
-                <span>PRODUCT 01</span>
-            </div>
-
-            <div class="product">
-                <span>PRODUCT 02</span>
-            </div>
-
-            <div class="product">
-                <span>PRODUCT 03</span>
-            </div>
-
-            <div class="product">
-                <span>PRODUCT 04</span>
-            </div>
-
+        <div class="see-all">
+            GUNMA
         </div>
 
-    </section>
+    </div>
 
-    <section class="about">
 
-        <h2>GUNMA</h2>
+    <div class="product-grid">
 
-        <p>
-            Vista sua identidade.
-            Uma coleção criada para transformar
-            expressão, personalidade e atitude em
-            algo que você pode vestir.
-        </p>
 
-    </section>
+        <!-- PRODUTO 01 -->
 
-    <footer>
+        <a class="product-card" href="#">
 
-        <span>GUNMA © 2026</span>
+            <img
+                class="product-image"
+                src="psico-logo.jpg"
+                alt="Camiseta PSICO Logo">
 
-        <a href="https://www.instagram.com/gunma.stk/" target="_blank">
-            INSTAGRAM
+            <div class="product-info">
+
+                <div class="product-name">
+                    PSICO LOGO
+                </div>
+
+                <div class="price">
+                    R$ 129,90
+                </div>
+
+            </div>
+
         </a>
 
-    </footer>
+
+        <!-- PRODUTO 02 -->
+
+        <a class="product-card" href="#">
+
+            <img
+                class="product-image"
+                src="psico-verdade.jpg"
+                alt="Camiseta PSICO Verdade">
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    PSICO VERDADE
+                </div>
+
+                <div class="price">
+                    R$ 149,90
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- PRODUTO 03 — BLUR -->
+
+        <a class="product-card" href="#">
+
+            <img
+                class="product-image blur"
+                src="gunma-sun.jpg"
+                alt="Próximo lançamento GUNMA">
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    GUNMA SUN
+                </div>
+
+                <div class="price">
+                    EM BREVE
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- PRODUTO 04 — BLUR -->
+
+        <a class="product-card" href="#">
+
+            <img
+                class="product-image blur"
+                src="girassol.jpg"
+                alt="Próximo lançamento">
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    GIRASSOL
+                </div>
+
+                <div class="price">
+                    EM BREVE
+                </div>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<section class="about">
+
+    <h2>GUNMA</h2>
+
+    <p>
+        Vista sua identidade.
+        Uma coleção criada para transformar
+        expressão, personalidade e atitude
+        em algo que você pode vestir.
+    </p>
+
+</section>
+
+
+<footer>
+
+    <span>
+        © GUNMA 2026
+    </span>
+
+    <a
+        href="https://www.instagram.com/gunma.stk/"
+        target="_blank">
+        @GUNMA.STK
+    </a>
+
+</footer>
 
 </body>
 </html>
