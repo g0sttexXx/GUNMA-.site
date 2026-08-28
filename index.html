@@ -7,7 +7,7 @@
     <title>GUNMA — PSICO</title>
 
     <style>
-        * {
+         {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -133,8 +133,34 @@
         .product-card {
             color: white;
             text-decoration: none;
-        }
+      }
 
+         .product-media {
+            position: relative;
+            overflow: hidden;
+}
+
+         .product-media .foto,
+         .product-media .gif {
+            width: 100%;
+            display: block;
+}
+
+         .product-media .gif {
+             position: absolute;
+             top: 0;
+             left: 0;
+             opacity: 0;
+             pointer-events: none;
+}
+
+         .product-media.tocando .foto {
+             opacity: 0;
+}
+
+         .product-media.tocando .gif {
+             opacity: 1;
+}
         .product-image {
             width: 100%;
             aspect-ratio: 1 / 1;
@@ -442,8 +468,7 @@
 
 </footer>
 
-    <script>
-
+<script>
 const produtos = document.querySelectorAll('.product-card');
 
 produtos.forEach(produto => {
@@ -452,27 +477,24 @@ produtos.forEach(produto => {
 
     if (!media) return;
 
-    produto.addEventListener('pointerdown', function(event) {
-
+    produto.addEventListener('pointerdown', () => {
         media.classList.add('tocando');
-
     });
 
-    produto.addEventListener('pointerup', function(event) {
-
+    produto.addEventListener('pointerup', () => {
         media.classList.remove('tocando');
-
     });
 
-    produto.addEventListener('pointercancel', function(event) {
-
+    produto.addEventListener('pointercancel', () => {
         media.classList.remove('tocando');
+    });
 
+    produto.addEventListener('pointerleave', () => {
+        media.classList.remove('tocando');
     });
 
 });
-
-    </script>
+</script>
 
 </body>
 </html>
