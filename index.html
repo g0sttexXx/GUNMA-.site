@@ -111,7 +111,19 @@
             padding: 100px 5%;
             border-top: 1px solid #222;
         }
+         .product-card {
+           -webkit-user-select: none;
+            user-select: none;
+           -webkit-touch-callout: none;
+           -webkit-user-drag: none;
+        }
 
+       .product-card img {
+           -webkit-user-select: none;
+            user-select: none;
+           -webkit-user-drag: none;
+            user-drag: none;
+        }
         .section-header {
             display: flex;
             justify-content: space-between;
@@ -508,6 +520,17 @@ produtos.forEach(produto => {
     });
 
     img.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+    });
+
+});
+    document.querySelectorAll('.product-card').forEach(produto => {
+
+    produto.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    produto.addEventListener('dragstart', function(e) {
         e.preventDefault();
     });
 
