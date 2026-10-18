@@ -1,1 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PSICO LOGO — GUNMA</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #050505;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .topo {
+            height: 70px;
+            border-bottom: 1px solid #222;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+        }
+
+        .logo {
+            font-size: 18px;
+            letter-spacing: 5px;
+        }
+
+        .voltar {
+            color: #fff;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .produto {
+            max-width: 1100px;
+            margin: 70px auto;
+            padding: 20px;
+
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 70px;
+        }
+
+        .imagem-produto {
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 600px;
+        }
+
+        .imagem-produto img {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+        }
+
+        .informacoes {
+            padding-top: 30px;
+        }
+
+        .colecao {
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .preco {
+            font-size: 22px;
+            margin-bottom: 45px;
+        }
+
+        .titulo-opcao {
+            font-size: 10px;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            color: #aaa;
+        }
+
+        .opcoes {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .opcoes button {
+            background: transparent;
+            border: 1px solid #444;
+            color: #fff;
+            padding: 14px 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .opcoes button:hover,
+        .opcoes button.selecionado {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+
+        .comprar {
+            width: 100%;
+            padding: 18px;
+            border: 1px solid #fff;
+            background: #fff;
+            color: #000;
+            font-size: 11px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .comprar:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .descricao {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid #222;
+            color: #888;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 700px) {
+
+            .produto {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin: 30px auto;
+            }
+
+            .imagem-produto {
+                min-height: auto;
+            }
+
+            .informacoes {
+                padding-top: 10px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header class="topo">
+
+        <div class="logo">
+            GUNMA
+        </div>
+
+        <a href="index.html" class="voltar">
+            ← VOLTAR
+        </a>
+
+    </header>
+
+
+    <main class="produto">
+
+        <div class="imagem-produto">
+
+            <img
+                src="psico-logo.jpg"
+                alt="Camiseta PSICO LOGO"
+            >
+
+        </div>
+
+
+        <div class="informacoes">
+
+            <div class="colecao">
+                COLEÇÃO 01
+            </div>
+
+            <h1>
+                PSICO LOGO
+            </h1>
+
+            <div class="preco">
+                R$ 95,00
+            </div>
+
+
+            <div class="titulo-opcao">
+                TAMANHO
+            </div>
+
+            <div class="opcoes" id="tamanhos">
+
+                <button>P</button>
+                <button>M</button>
+                <button>G</button>
+                <button>GG</button>
+
+            </div>
+
+
+            <div class="titulo-opcao">
+                COR
+            </div>
+
+            <div class="opcoes" id="cores">
+
+                <button>PRETO</button>
+                <button>MARROM</button>
+
+            </div>
+
+
+            <button class="comprar" onclick="comprar()">
+                COMPRAR
+            </button>
+
+
+            <div class="descricao">
+
+                Camiseta GUNMA — Coleção PSICO.
+
+                <br><br>
+
+                Modelagem confortável, acabamento premium
+                e estampa exclusiva da coleção.
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        let tamanhoSelecionado = "";
+        let corSelecionada = "";
+
+        document
+            .querySelectorAll("#tamanhos button")
+            .forEach(botao => {
+
+                botao.addEventListener("click", () => {
+
+                    document
+                        .querySelectorAll("#tamanhos button")
+                        .forEach(b => b.classList.remove("selecionado"));
+
+                    botao.classList.add("selecionado");
+
+                    tamanhoSelecionado = botao.innerText;
+
+                });
+
+            });
+
+
+        document
+            .querySelectorAll("#cores button")
+            .forEach(botao => {
+
+                botao.addEventListener("click", () => {
+
+                    document
+                        .querySelectorAll("#cores button")
+                        .forEach(b => b.classList.remove("selecionado"));
+
+                    botao.classList.add("selecionado");
+
+                    corSelecionada = botao.innerText;
+
+                });
+
+            });
+
+
+        function comprar() {
+
+            if (!tamanhoSelecionado || !corSelecionada) {
+
+                alert("Selecione o tamanho e a cor.");
+
+                return;
+
+            }
+
+            const mensagem =
+                `Olá, GUNMA! Quero comprar a PSICO LOGO.
+
+Tamanho: ${tamanhoSelecionado}
+Cor: ${corSelecionada}
+Preço: R$ 95,00`;
+
+            const telefone = "SEU_NUMERO_AQUI";
+
+            const url =
+                `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+
+            window.open(url, "_blank");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
